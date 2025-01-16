@@ -9,7 +9,7 @@ WORKDIR /app
 # Copiar el código fuente
 COPY . .
 # Instalar dependencias de Symfony
-RUN composer install --no-scripts --no-interaction
+RUN composer install --no-scripts --no-interaction --no-dev –optimize-autoloader
 EXPOSE 8000
 # Comando de inicio
 CMD ["php", "-S", "0.0.0.0:8000", "-t", "public"]
